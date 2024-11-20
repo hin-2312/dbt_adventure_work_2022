@@ -1,0 +1,56 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'dbt_proj_fss'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dbt_proj_fss'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+# dbt_project.yml
+
+# Configure seeds correctly  
+
+
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  dbt_proj_fss:
+    # Config indicated by + and applies to all files under models/example/
+    staging_product:
+    staging_region:
+    staging_reseller:
+    staging_sale_person_region:
+    staging_sale_person:
+    staging_sales:
+    staging_target:
+    dim_product:
+      materialized= table
+    dim_region:
+      materialized= table
+    dim_reseller:
+      materialized= table
+    dim_seller:
+      materialized= table
+    fact_sale:
+      materialized= table

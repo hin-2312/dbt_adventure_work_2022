@@ -1,0 +1,85 @@
+
+version: 2
+
+models:
+  - name: staging_product
+    description: "Staging table 'product'."
+    columns:
+      - name: product_key
+        description: "The primary key for this table"
+      - name: product
+        description: "Detailed product name"
+      - name: standard_cost
+        description: "Standard cost"
+      - name: color
+        description: "Color of product"
+      - name: subcategory
+        description: "Subcategory of product"
+      - name: category
+        description: "Category of product"
+      - name: background_color
+        description: "Background color if printed"
+      - name: font_color_format
+        description: "Font color if printed"
+  - name: staging_region
+    columns: 
+      - name: sale_territory_key
+        description: "Primary key to identify sales region, 0 means main office, hence ommited."
+      - name: region
+        description: "Northwest, Central, Southwest (for America) and Canada, France, or Germany (non American)"
+      - name: country
+        description: "US, France, Germany, Australia, UK"
+      - name: group 
+        description: "North America, Europe, Pacific"
+  - name: staging_reseller
+    columns:
+      - name: reseller_key
+      - name: business_type
+      - name: reseller
+      - name: city
+      - name: state_province
+      - name: country_region
+  - name: staging_sale_person
+    columns:
+      - name: emp_key
+      - name: emp_id
+      - name: frist_name
+      - name: last_name
+      - name: title
+      - name: upn
+  - name: staging_sale_person_region
+    colunm:
+      - name: emp_key
+      - name: sale_territory_key
+  - name: staging_sales
+    colunm:
+      - name: sale_order_number
+      - name: order_date
+      - name: product_key
+      - name: reseller_key
+      - name: emp_key
+      - name: sale_territory_key
+      - name: quantity
+  - name: staging_target
+    colunm:
+      - name: emp_id
+      - name: target_month
+      - name: emp_target
+  - name: dim_product
+    colunm:
+      - name: product_key
+        description: "The primary key for this table"
+      - name: product
+        description: "Detailed product name"
+      - name: standard_cost
+        description: "Standard cost"
+      - name: color
+        description: "Color of product"
+      - name: subcategory
+        description: "Subcategory of product"
+      - name: category
+        description: "Category of product"
+  - name: dim_region
+  - name: dim_reseller
+  - name: dim_seller
+  - name: fact_sale

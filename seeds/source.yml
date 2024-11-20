@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: work2022
+    database: work2022      # Điền tên database của bạn
+    schema: public                    # Điền tên schema (nếu có)
+    tables:
+      - name: product                 # Tên bảng sản phẩm gốc
+        description: "Dữ liệu sản phẩm từ bảng work2022"
+      - name: region
+        description: "Dữ liệu vùng từ bảng work2022"
+      - name: reseller
+      - name: sale_person_region
+      - name: sale_person
+      - name: sales
+      - name: target
+      
